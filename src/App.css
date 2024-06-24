@@ -1,6 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
   text-align: center;
+}
+
+a {
+  transition: transform 0.3s ease; /* Use alternate to go up and down */
+}
+
+a:hover {
+  transform: translateY(-5px); /* Move text up */
 }

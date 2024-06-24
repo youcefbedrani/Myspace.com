@@ -5,8 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #100f0f;/* #e4e2dd for light mode */
-
+  background-color: #e4e2dd;/* #e4e2dd for light mode */
+  /* #100f0f for dark mode */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

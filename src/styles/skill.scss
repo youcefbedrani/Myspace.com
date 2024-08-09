@@ -1,0 +1,173 @@
+h1 {
+  //   font-size: 4.5em;
+  font-weight: bold;
+  line-height: 1.2;
+  text-wrap: pretty;
+  margin-top: 220px;
+}
+
+.linear {
+  --from: #db91cb;
+  --to: #673fd7;
+
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: linear;
+  animation-timing-function: linear;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    120deg,
+    var(--from),
+    var(--to) 50%,
+    var(--from)
+  );
+  background-size: 200%;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  @media (max-width: 768px) {
+    background-image: linear-gradient(
+      120deg,
+      var(--from),
+      var(--to) 50%,
+      var(--from)
+    );
+    font-size: 3rem; // Adjust font size for mobile devices
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem; // Further adjust size for very small screens
+  }
+}
+
+@keyframes linear {
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.skills-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.skills {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 200px auto;
+}
+
+.skills-section {
+  margin-bottom: 2rem;
+  margin-right: 2.5rem;
+}
+
+.skills-section h2 {
+  margin-bottom: 1rem;
+  color: #232f3e;
+}
+
+.skill-bar {
+  margin-bottom: 1rem;
+}
+
+.skill-bar span {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: #f1f1f1;
+  border-radius: 0px;
+  border-color: #232f3e;
+
+  overflow: hidden;
+}
+
+.progress {
+  height: 20px;
+  border-color: #232f3e;
+  background-color: #61dafb; /* Default color, you can customize for each skill */
+  border-radius: 0px;
+}
+
+.react .progress {
+  background-color: #61dafb;
+}
+
+.vue .progress {
+  background-color: #42b883;
+}
+
+.tcss .progress {
+  background-color: #264de4;
+}
+
+.Mysql .progress {
+  background-color: #f29111; /* Custom color for MySQL */
+}
+
+.Postgres .progress {
+  background-color: #336791; /* Custom color for PostgreSQL */
+}
+
+.Mongo .progress {
+  background-color: #4db33d; /* Custom color for MongoDB */
+}
+
+.Fireb .progress {
+  background-color: #ffca28; /* Custom color for Firebase */
+}
+
+.laravel .progress {
+  background-color: #ff2d20;
+}
+
+.node .progress {
+  background-color: #8cc84b;
+}
+
+.rest .progress {
+  background-color: #f7df1e;
+}
+
+.graphql .progress {
+  background-color: #e535ab;
+}
+.oauth .progress {
+  background-color: #336791;
+}
+.axios .progress {
+  background-color: #2f026a;
+}
+
+.docker .progress {
+  background-color: #2496ed;
+}
+
+.cicd .progress {
+  background-color: #44bfc2;
+}
+
+.aws .progress {
+  background-color: #232f3e;
+}
+
+.other .progress {
+  background-color: #007997;
+}
+.js .progress {
+  background-color: #a9940a;
+}
+
+.ts .progress {
+  background-color: #2f42bce6;
+}
+
+.php .progress {
+  background-color: #4114e273;
+}

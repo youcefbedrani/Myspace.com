@@ -1,0 +1,133 @@
+/*
+** Change this if you need to modify
+** the amount of lines displayed
+*/
+$total-lines: 12;
+
+/*
+** Leave these unless you want
+** to open a whole can of worms
+*/
+$left-offset: 29px;
+$clip-height: 50px;
+$line-height: $clip-height - 5px;
+
+/*
+** Set up the experiment
+*/
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.video-blur {
+    filter: blur(10px); /* Adjust the blur radius as needed */
+  }
+
+/* Add animated shapes */
+@keyframes shape-animation {
+  0% { transform: translateX(0) rotate(0); opacity: 1; }
+  50% { transform: translateX(50vw) rotate(180deg); opacity: 0.5; }
+  100% { transform: translateX(100vw) rotate(360deg); opacity: 1; }
+}
+
+.shape {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  animation: shape-animation 10s linear infinite;
+}
+
+.shape:nth-child(2) {
+  top: 20%;
+  left: -100px;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.shape:nth-child(3) {
+  top: 40%;
+  left: -200px;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.shape:nth-child(4) {
+  top: 60%;
+  left: -300px;
+  animation-duration: 16s;
+  animation-delay: 6s;
+}
+
+/*
+** Apply styles to the parent element
+*/
+.Words {
+  margin: 12px 12px 0px -300px;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: black;
+  // Sort out nasty text fuzz
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*
+** Apply common styles to each line of text
+*/
+.Words-line {
+  height: $clip-height;
+  overflow: hidden;
+  position: relative;
+  
+  // Change the perspective of each alternating line
+  &:nth-child(odd) {
+    transform: skew(60deg, -30deg) scaleY(.66667);
+  }
+  &:nth-child(even) {
+    transform: skew(0deg, -30deg) scaleY(1.33333);
+  }
+  
+  // Loop over the total lines and apply a left offset
+  @for $i from 1 through $total-lines+1 {
+    &:nth-child(#{$i}) {
+      left: $left-offset * $i;
+    }
+  }
+}
+
+/*
+** Fine-grained text styles
+*/
+p {
+  height: $clip-height;
+  line-height: $line-height;
+  padding: 0 10px;
+  transition: all .4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/*
+** The hover interaction
+*/
+.Words:hover {
+  p {
+    transform: translate3d(0, -($clip-height), 0);
+  }
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import "../../styles/skill.scss";
 function Skills() {
   return (

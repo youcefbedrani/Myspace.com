@@ -22,19 +22,19 @@ const Header: React.FC<HeaderProps> = ({ show }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-
-    if (width <= 680) {
-      // For small screens
-      setScrolledT(scrollPosition > 6801);
-    } else {
-      // For larger screens
-      setScrolledT(scrollPosition > 5510);
-    }
-  };
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (width <= 680) {
+        // For small screens
+        setScrolledT(scrollPosition > 6801);
+      } else {
+        // For larger screens
+        setScrolledT(scrollPosition > 5510);
+      }
+    };
     if (elementRef.current) {
       // Get the width of the element
       setWidth(0);
@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ show }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll]);
+  }, [width]);
 
   return show === "yes" ? (
     <div

@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import "../../styles/footer.scss";
 

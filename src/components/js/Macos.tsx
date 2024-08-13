@@ -1,4 +1,3 @@
-import React from "react";
 import icon from "../../../public/waving-hand.png";
 
 function Macos() {

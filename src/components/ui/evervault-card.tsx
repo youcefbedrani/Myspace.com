@@ -1,12 +1,8 @@
-"use client";
-import {
-  useMotionValue,
-  useMotionTemplate,
-  motion,
-  MotionValue,
-} from "framer-motion";
 import React, { useState, useEffect } from "react";
+import { useMotionValue, useMotionTemplate, motion } from "framer-motion";
 import { cn } from "../../utils/cn";
+import { generateRandomString } from "../../utils/utils"; // Update import paths
+import { MotionValue } from "framer-motion";
 
 // Define prop types for EvervaultCard
 interface EvervaultCardProps {
@@ -26,9 +22,8 @@ export const EvervaultCard: React.FC<EvervaultCardProps> = ({
   useEffect(() => {
     const str = generateRandomString(1500);
     setRandomString(str);
-  }, []); // No dependencies needed here
+  }, []);
 
-  // Define event type for onMouseMove
   function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const { left, top } = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - left);
@@ -98,36 +93,3 @@ export function CardPattern({
     </div>
   );
 }
-
-// Move this function to a separate file (e.g., utils.ts)
-const characters =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-export const generateRandomString = (length: number): string => {
-  let result = "";
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  return result;
-};
-
-// Define prop types for Icon
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string;
-}
-
-export const Icon: React.FC<IconProps> = ({ className, ...rest }) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className={className}
-      {...rest}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-    </svg>
-  );
-};

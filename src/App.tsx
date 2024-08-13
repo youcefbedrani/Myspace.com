@@ -60,7 +60,7 @@ const App: React.FC = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, [width]);
 
   // Add width to dependency array to update on resize
 

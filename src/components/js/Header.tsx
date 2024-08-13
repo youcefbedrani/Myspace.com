@@ -40,7 +40,6 @@ const Header: React.FC<HeaderProps> = ({ show }) => {
   useEffect(() => {
     if (elementRef.current) {
       // Get the width of the element
-      setWidth(elementRef.current.clientWidth);
     }
     window.addEventListener("scroll", handleScroll);
     return () => {

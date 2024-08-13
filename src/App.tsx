@@ -1,11 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./App.scss";
 import "./styles/tailwind.css";
-import { EvervaultCard, Icon } from "./components/ui/evervault-card";
 import logo3 from "../public/2-e.png";
 import logo2 from "../public/1-e.png";
 import logo4 from "../public/3-d-o.png";
-import icon from "../public/waving-hand.png";
 import BackgroundVideo from "./components/js/BackgroundVideo";
 import Header from "./components/js/Header";
 import Macos from "./components/js/Macos";
@@ -31,38 +29,38 @@ const App: React.FC = () => {
   }, []);
 
   // Handle scrolling
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-
-    if (width <= 680) {
-      // For small screens
-      if (scrollPosition > 400 && scrollPosition <= 6800) {
-        setScrolled(true);
-        setScrolledV(false);
-      } else if (scrollPosition > 6800) {
-        setScrolledV(true);
-      } else {
-        setScrolled(false);
-        setScrolledV(false);
-      }
-    } else {
-      // For larger screens
-      if (scrollPosition > 400 && scrollPosition <= 5510) {
-        setScrolled(true);
-        setScrolledV(false);
-      } else if (scrollPosition > 5510) {
-        setScrolledV(true);
-      } else {
-        setScrolled(false);
-        setScrolledV(false);
-      }
-    }
-  };
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (width <= 680) {
+        // For small screens
+        if (scrollPosition > 400 && scrollPosition <= 6800) {
+          setScrolled(true);
+          setScrolledV(false);
+        } else if (scrollPosition > 6800) {
+          setScrolledV(true);
+        } else {
+          setScrolled(false);
+          setScrolledV(false);
+        }
+      } else {
+        // For larger screens
+        if (scrollPosition > 400 && scrollPosition <= 5510) {
+          setScrolled(true);
+          setScrolledV(false);
+        } else if (scrollPosition > 5510) {
+          setScrolledV(true);
+        } else {
+          setScrolled(false);
+          setScrolledV(false);
+        }
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [width]);
+  }, [handleScroll]);
 
   // Add width to dependency array to update on resize
 

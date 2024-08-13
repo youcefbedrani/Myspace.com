@@ -22,9 +22,6 @@ const Header: React.FC<HeaderProps> = ({ show }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  // console.log("the width is : ", width);
-
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
@@ -40,12 +37,13 @@ const Header: React.FC<HeaderProps> = ({ show }) => {
   useEffect(() => {
     if (elementRef.current) {
       // Get the width of the element
+      setWidth(0);
     }
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return show === "yes" ? (
     <div

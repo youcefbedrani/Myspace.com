@@ -1,4 +1,21 @@
 {
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",  // Ensure this is set to "node"
+    "resolveJsonModule": true,    // Only if you need JSON imports
+    "isolatedModules": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
   "files": [],
   "references": [
     {

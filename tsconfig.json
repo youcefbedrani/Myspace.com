@@ -10,12 +10,12 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true, // Remove this line if you don't need JSON imports
+    "moduleResolution": "node",  // Ensure this is set to "node"
+    "resolveJsonModule": true,    // Only if you need JSON imports
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src"],
   "files": [],
   "references": [
     {
